@@ -1,0 +1,23 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$icon-color: #ffa500;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+.search-icon {
+  color: #FFF;
+  font-size: 4em;
+  right: 45%;
+  padding: 12px 0px;
+  overflow: visible;
+}
+.input-lg {
+  height: 70px;
+  background-color: #555;
+  border-radius: 50px;
+}
+.form-control {
+  color: #FFF;
+}
