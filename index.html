@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wiki Viewer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/cover.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -26,16 +27,36 @@
           </h3>
           <br />
           <br />
-          <div class="col-lg-4 col-lg-offset-3">
-
+          <div class="col-lg-12">
+            <div class="col-lg-2 col-lg-pull-4">
+            <form role="form" class="form-inline">
+              <div class="form-group has-feedback">
+                <label class="control-label sr-only"></label>
+                <input id='search-form' type="date" class="form-control input-lg" />
+                <i id='search-button' class="form-control-feedback fa fa-birthday-cake search-icon"></i>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-2 col-lg-push-1">
             <form role="form" class="form-inline">
               <div class="form-group has-feedback">
                 <label class="control-label sr-only"></label>
                 <input id='search-form' type="text" class="form-control input-lg" />
-                <i id='search-button' class="form-control-feedback glyphicon glyphicon-search search-icon"></i>
+                <i id='search-button' class="form-control-feedback fa fa-search search-icon"></i>
               </div>
             </form>
-
+          </div>
+          <div class="col-lg-2 col-lg-push-6">
+            <!-- <form role="form" class="form-inline">
+              <div class="form-group has-feedback">
+                <label class="control-label sr-only"></label>
+                <input id='search-form' type="text" class="form-control input-lg" /> -->
+                <button type="button" class="btn btn-default btn-sm wiki">
+                  <i id='wiki-button' class="fa fa-wikipedia-w search-icon"><i class="fa fa-random rand"></i></i>
+                </button>
+              </div>
+            <!-- </form> -->
+          </div>
           </div>
         </div>
       </div>

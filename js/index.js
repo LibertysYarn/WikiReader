@@ -12,6 +12,11 @@ $(document).ready(function() {
     });
   })
 
+  $(function() {
+    $("#wiki-button").click(function(e) {
+      $('#wiki-button').innerHTML('Random!')
+  })
+
 });
 
 // Using XMLHttpRequest

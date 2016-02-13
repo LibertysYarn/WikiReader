@@ -1,7 +1,6 @@
-$font-stack: Helvetica, sans-serif;
+/*$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
-$icon-color: #ffa500;
-
+$icon-color: #ffa500;*/
 body {
   font: 100% $font-stack;
   color: $primary-color;
@@ -17,7 +16,18 @@ body {
   height: 70px;
   background-color: #555;
   border-radius: 50px;
+  width: 100%;
 }
 .form-control {
   color: #FFF;
+}
+.rand {
+  display: inline;
+  font-size: .65em;
+}
+.wiki {
+  width: 250px;
+  padding: 0;
+  background-color: #555;
+  border-radius: 50px;
 }
