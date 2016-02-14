@@ -16,11 +16,11 @@
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
-        <div class="masthead clearfix">
+        <!-- <div class="masthead clearfix">
           <div class="inner">
           </div>
-        </div>
-        <div class="inner cover">
+        </div> -->
+        <!-- <div class="container-fluid"> -->
           <h3>
             What do you need to know? <br />
             Or would you like to learn something random?
@@ -29,46 +29,54 @@
           <br />
           <div class="col-lg-12">
             <div class="col-lg-2 col-lg-pull-4">
-            <form role="form" class="form-inline">
-              <div class="form-group has-feedback">
-                <label class="control-label sr-only"></label>
-                <input id='search-form' type="date" class="form-control input-lg" />
-                <i id='search-button' class="form-control-feedback fa fa-birthday-cake search-icon"></i>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-2 col-lg-push-1">
-            <form role="form" class="form-inline">
-              <div class="form-group has-feedback">
-                <label class="control-label sr-only"></label>
-                <input id='search-form' type="text" class="form-control input-lg" />
-                <i id='search-button' class="form-control-feedback fa fa-search search-icon"></i>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-2 col-lg-push-6">
-            <!-- <form role="form" class="form-inline">
-              <div class="form-group has-feedback">
-                <label class="control-label sr-only"></label>
-                <input id='search-form' type="text" class="form-control input-lg" /> -->
-                <button type="button" class="btn btn-default btn-sm wiki">
-                  <i id='wiki-button' class="fa fa-wikipedia-w search-icon"><i class="fa fa-random rand"></i></i>
-                </button>
-              </div>
-            <!-- </form> -->
-          </div>
+              <form role="form" class="form-inline">
+                <div class="form-group has-feedback">
+                  <label class="control-label sr-only"></label>
+                  <input id='date-form' type="date" class="form-control input-lg" />
+                  <i id='cake-button' class="form-control-feedback fa fa-birthday-cake search-icon"></i>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-2 col-lg-push-1">
+              <form id='search-form' role="form" class="form-inline">
+                <div class="form-group has-feedback">
+                  <input id="search" type="text" class="form-control input-lg" />
+                  <i id='search-button' class="form-control-feedback fa fa-search search-icon"></i>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-2 col-lg-push-6">
+              <button type="button" id="wiki-button" class="btn btn-default btn-sm wiki" onclick="window.location ='http://en.wikipedia.org/wiki/Special:Random';">
+                <i class="fa fa-wikipedia-w search-icon"><i class="fa fa-random rand"></i></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
+
+
+
+
+          <!-- <div class="row"> -->
+
+            <!-- <div class="col-lg-12"> -->
+              <div class="grid">
+
+              </div>
+
+            <!-- </div>
+          </div> -->
+</div>
+</div></div>
+
+
+
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 

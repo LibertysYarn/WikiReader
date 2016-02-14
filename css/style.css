@@ -1,15 +1,25 @@
 /*$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 $icon-color: #ffa500;*/
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500);
+
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+  font: 'Catamaran', sans-serif;
+  color: #FFF;
+}
+a {
+  color:#333;
+  text-decoration: none;
+}
+a:hover {
+  color: #444;
+  text-decoration:none;
 }
 .search-icon {
   color: #FFF;
   font-size: 4em;
   right: 45%;
-  padding: 12px 0px;
+  padding: 12px 0;
   overflow: visible;
 }
 .input-lg {
@@ -31,3 +41,50 @@ body {
   background-color: #555;
   border-radius: 50px;
 }
+button:hover .search-icon {
+  color: #333;
+}
+ .col-lg-12 {
+   margin-bottom: 5%;
+ }
+
+/* ---- grid ---- */
+
+.grid {
+  /*background: #EEE;*/
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 260px;
+  height: 200px;
+  color: #333;
+  float: left;
+  background: #EEE;
+  border: 1px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+  margin: 0 10px 10px 0;
+  padding: 0 7px 7px 7px;
+
+}
+
+/*@media (min-width: 1200px) {
+  .cards {
+    width: 990px;
+    margin-left: -25%;
+    margin-top: 5%;
+  }
+}*/

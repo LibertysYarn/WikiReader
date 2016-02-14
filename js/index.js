@@ -5,96 +5,97 @@
 
 $(document).ready(function() {
 
+  var search = $('#search');
+  var content = $(".grid");
+  // var grid = $(".grid");
+  // var gridItem = $(".grid-item");
+
+  $('#search-form').submit(function() {
+    var grid = document.querySelector('.grid');
+    var msnry = new Masonry(grid, {
+      itemSelector: '.grid-item',
+      columnWidth: 260,
+      gutter: 20
+    });
+
+    $.ajax({
+      url: "https://en.wikipedia.org/w/api.php?",
+      data: {
+        action: 'query',
+        list: 'search',
+        srsearch: search.val(),
+        format: 'json'
+      }, //end of data
+      dataType: 'jsonp',
+      success: function(data) {
+        var datatp = '';
+        data.query.search.map(function(f) {
+          datatp += '<div class="grid-item">'
+          datatp += '<div><a href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
+          datatp += '<p>' + f.snippet + '</p>';
+          datatp += '</div></div>'
+
+        })
+        content.html(datatp);
+      }
+    });
+    return false;
+  });
+
   $(function() {
-    $("#search-form").click(function(e) {
-      e.preventDefault();
+    $("#search-form").click(function() {
+      // e.preventDefault();
       $("#search-button").toggle("explode");
     });
-  })
+  });
 
   $(function() {
-    $("#wiki-button").click(function(e) {
-      $('#wiki-button').innerHTML('Random!')
-  })
+    $("#date-form").click(function(e) {
+      e.preventDefault();
+      $("#cake-button").toggle("explode");
+    });
+  });
+
+  
+  // $('#wiki-button').on( 'click', function() {
+  //     url:'https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1',
+  //   // create new item elements
+  //   var $items = $('<div class="grid-item">...</div>');
+  //   // append items to grid
+  //   $grid.append( $items )
+  //     // add and lay out newly appended items
+  //     .masonry( 'appended', $items );
+  // });
+  //
+  // var appendButton = document.querySelector('.append-button');
+  // appendButton.addEventListener( 'click', function() {
+  //   // create new item elements
+  //   var elems = [];
+  //   var fragment = document.createDocumentFragment();
+  //   for ( var i = 0; i < 3; i++ ) {
+  //     var elem = getItemElement();
+  //     fragment.appendChild( elem );
+  //     elems.push( elem );
+  //   }
+  //   // append elements to container
+  //   grid.appendChild( fragment );
+  //   // add and lay out newly appended elements
+  //   msnry.appended( elems );
+  // });
+  //
+  // // create <div class="grid-item"></div>
+  // function getItemElement() {
+  //   var elem = document.createElement('div');
+  //   var wRand = Math.random();
+  //   var hRand = Math.random();
+  //   var widthClass = wRand > 0.8 ? 'grid-item--width3' : wRand > 0.6 ? 'grid-item--width2' : '';
+  //   var heightClass = hRand > 0.85 ? 'grid-item--height4' : hRand > 0.6 ? 'grid-item--height3' : hRand > 0.35 ? 'grid-item--height2' : '';
+  //   elem.className = 'grid-item ' + widthClass + ' ' + heightClass;
+  //   return elem;
+  // }
+
+
+
+
 
 });
-
-// Using XMLHttpRequest
-// xhr.setRequestHeader('Api-User-Agent', 'Example/1.0');
-// var ApiUserAgent = WikiReader / 1.1(https: //example.org/MyCoolTool/; MyCoolTool@example.org) BasedOnSuperLib/1.4
-
-
-    // var mw;
-    // (function(mw) {
-
-      /**
-       * Query a MediaWiki api.php instance with the given options
-       */
-      // function mwQuery(endpoint, options) {
-
-        /**
-         * Create a uniquely-named callback that will process the JSONP results
-         */
-        // var createCallback = function(k) {
-        //   var i = 1;
-        //   var callbackName;
-        //   do {
-        //     callbackName = 'callback' + i;
-        //     i = i + 1;
-        //   } while (window[callbackName])
-        //   window[callbackName] = k;
-        //   return callbackName;
-        // }
-
-        /**
-         * Flatten an object into a URL query string.
-         * For example: { foo: 'bar', baz: 42 } becomes 'foo=bar&baz=42'
-         */
-        // var queryStr = function(options) {
-        //   var query = [];
-        //   for (var i in options) {
-        //     if (options.hasOwnProperty(i)) {
-        //       query.push(encodeURIComponent(i) + '=' + encodeURIComponent(options[i]));
-        //     }
-        //   }
-        //   return query.join('&');
-        // }
-        //
-        /**
-         * Build a function that can be applied to a callback.  The callback processes
-         * the JSON results of the API call.
-         */
-    //     return function(k) {
-    //       options.format = 'json';
-    //       options.callback = createCallback(k);
-    //       var script = document.createElement('script');
-    //       script.src = endpoint + '?' + queryStr(options);
-    //       var head = document.getElementsByTagName('head')[0];
-    //       head.appendChild(script);
-    //     };
-    //
-    //   }
-    //
-    //   mw.api = {
-    //     query: mwQuery,
-    //   };
-    //
-    // })(mw || (mw = {}));
-
-    // $.ajax({
-    //   url: '//en.wikipedia.org/w/api.php',
-    //   data: {
-    //     action: 'query',
-    //     list: 'search',
-    //     srsearch: 'Richard Feynman',
-    //     format: 'json'
-    //   },
-    //   dataType: 'jsonp',
-    //   success: function(x) {
-    //     console.log('title', x.query.search[0].title);
-    //   }
-    // });
-
-
-
-    //https://en.wikipedia.org/w/api.php?action=query&titles=San_Francisco&prop=images&imlimit=20&format=jsonfm
