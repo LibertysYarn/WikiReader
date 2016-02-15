@@ -12,21 +12,28 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #444;
+  color: #111;
   text-decoration:none;
 }
 .search-icon {
   color: #FFF;
   font-size: 4em;
-  right: 45%;
   padding: 12px 0;
   overflow: visible;
+}
+form:active .search-icon,
+form:focus .search-icon,
+form:hover .search-icon {
+  display:none;
 }
 .input-lg {
   height: 70px;
   background-color: #555;
   border-radius: 50px;
-  width: 100%;
+  width: 200px;
+}
+.form-control-feedback{
+  right: 40%;
 }
 .form-control {
   color: #FFF;
@@ -36,13 +43,18 @@ a:hover {
   font-size: .65em;
 }
 .wiki {
-  width: 250px;
+  width: 200px;
   padding: 0;
   background-color: #555;
   border-radius: 50px;
 }
+
 button:hover .search-icon {
   color: #333;
+}
+.btn-focus, .btn-default, .btn-default:hover, .btn-default:focus {
+  border: none;
+  outline: none;
 }
  .col-lg-12 {
    margin-bottom: 5%;
@@ -80,11 +92,3 @@ button:hover .search-icon {
   padding: 0 7px 7px 7px;
 
 }
-
-/*@media (min-width: 1200px) {
-  .cards {
-    width: 990px;
-    margin-left: -25%;
-    margin-top: 5%;
-  }
-}*/
