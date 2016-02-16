@@ -1,8 +1,3 @@
-//TODO
-//adjust the "en" according to user location
-//
-
-
 $(document).ready(function() {
 
   var search = $('#search');
@@ -58,17 +53,26 @@ $(document).ready(function() {
         url: 'https://en.wikipedia.org/w/api.php?',
         data: {
           action: 'query',
-          list: 'random',
-          rnnamespace: 0,
-          rnlimit: 4,
-          format: 'json'
+          format: 'json',
+          prop: 'info|extracts',
+          generator: 'random',
+          formatversion: 2,
+          inprop: 'url',
+          exchars: 100,
+          explaintext: 1,
+          grnnamespace: 0,
+          grnlimit: 4
+// used a generator to get the title, full url, and text extract //
         },
         dataType: 'jsonp',
         success: function(data) {
+
           var dataW = '';
-          data.query.random.map(function(f) {
+          data.query.pages.map(function(f) {
+            var snip = (f.extract !== undefined) ? f.extract : "";
             dataW += '<div class="grid-item">'
-            dataW += '<div><a target="_blank" href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
+            dataW += '<div><a target="_blank" href="https://en.wikipedia.org/wiki/' + f.fullurl + '"><h2>' + f.title + '</h2></a>';
+            dataW += '<p>' + snip + '</p>';
             dataW += '</div></div>'
           })
           content.html(dataW)
