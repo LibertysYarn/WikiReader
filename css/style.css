@@ -1,19 +1,19 @@
 /*$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 $icon-color: #ffa500;*/
-@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500);
 
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500);
 body {
   font: 'Catamaran', sans-serif;
   color: #FFF;
 }
 a {
-  color:#333;
+  color: #333;
   text-decoration: none;
 }
 a:hover {
   color: #111;
-  text-decoration:none;
+  text-decoration: none;
 }
 .search-icon {
   color: #FFF;
@@ -21,18 +21,20 @@ a:hover {
   padding: 12px 0;
   overflow: visible;
 }
-form:active .search-icon,
-form:focus .search-icon,
-form:hover .search-icon {
-  display:none;
+form:active .search-icon, form:focus .search-icon, form:hover .search-icon, form:visited .search-icon {
+  display: none;
 }
 .input-lg {
   height: 70px;
   background-color: #555;
   border-radius: 50px;
   width: 200px;
+  border: none;
 }
-.form-control-feedback{
+.input-lg:focus {
+  outline: none;
+}
+.form-control-feedback {
   right: 40%;
 }
 .form-control {
@@ -46,19 +48,19 @@ form:hover .search-icon {
   width: 200px;
   padding: 0;
   background-color: #555;
-  border-radius: 50px;
+  border-radius: 3.125rem;
+  /* 50/16 */
 }
-
-button:hover .search-icon {
+button:hover .search-icon, button:focus .search-icon {
   color: #333;
 }
 .btn-focus, .btn-default, .btn-default:hover, .btn-default:focus {
   border: none;
   outline: none;
 }
- .col-lg-12 {
-   margin-bottom: 5%;
- }
+.col-lg-12 {
+  margin-bottom: 5%;
+}
 
 /* ---- grid ---- */
 
@@ -71,6 +73,7 @@ button:hover .search-icon {
 }
 
 /* clearfix */
+
 .grid:after {
   content: '';
   display: block;
@@ -88,7 +91,7 @@ button:hover .search-icon {
   border: 1px solid #333;
   border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
-  margin: 0 10px 10px 0;
+  margin: 0 0.625rem 0.625rem 0;
+  /* 10/16, 10/16 */
   padding: 0 7px 7px 7px;
-
 }

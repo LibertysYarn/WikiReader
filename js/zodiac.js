@@ -87,3 +87,10 @@ var animalResult = function() {
 };
 year = prompt("Enter an year plz:");
 chineseZodiac(animalResult);
+
+var year;
+var day;
+var newYearDate = [feb 17, feb 6, jan 26, feb 14, feb 3, jan 23, feb 11, jan 31, feb 19, feb 8, jan 28, feb 15, feb 5, jan 24, feb 12, feb 2, jan 22, feb 9, jan 29 ]
+var startYear = [1912, 1931, 1950, 1969, 1988, 2007, 2026, 2045, 2064, 2083]
+
+(year - 1912) % 19

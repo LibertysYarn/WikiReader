@@ -6,9 +6,10 @@
 $(document).ready(function() {
 
   var search = $('#search');
-  var content = $(".grid")
+  var searchF = $('#search-form');
+  var content = $(".grid");
 
-  $('#search-form').submit(function() {
+  $('#search-form').submit(function(s) {
     var grid = document.querySelector('.grid');
     var msnry = new Masonry(grid, {
       itemSelector: '.grid-item',
@@ -26,27 +27,28 @@ $(document).ready(function() {
       },
       dataType: 'jsonp',
       success: function(data) {
-        var datatp = '';
+        var dataS = '';
         data.query.search.map(function(f) {
-          datatp += '<div class="grid-item">'
-          datatp += '<a href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
-          datatp += '<p>' + f.snippet + '</p>';
-          datatp += '</div>'
+          dataS += '<div class="grid-item">'
+          dataS += '<a target="_blank" href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
+          dataS += '<p>' + f.snippet + '</p>';
+          dataS += '</div>'
 
         })
-        content.html(datatp);
+        content.html(dataS);
+        search.val("");
       }
     });
-    return false;
+     s.preventDefault();
   });
 
 
-  $('#wiki-button').on('click', function() {
+  $('button').on('click', function(w) {
     var $grid = $('.grid').masonry({
       columnWidth: 260,
       itemSelector: '.grid-item'
     });
-    var elems = [getItemElement(), getItemElement(), getItemElement()];
+    var elems = [getItemElement()];
     var $elems = $(elems);
     $grid.append($elems).masonry('appended', $elems);
 
@@ -63,16 +65,16 @@ $(document).ready(function() {
         },
         dataType: 'jsonp',
         success: function(data) {
-          var datatp = '';
+          var dataW = '';
           data.query.random.map(function(f) {
-            datatp += '<div class="grid-item">'
-            datatp += '<div><a href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
-            datatp += '</div></div>'
+            dataW += '<div class="grid-item">'
+            dataW += '<div><a target="_blank" href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
+            dataW += '</div></div>'
           })
-          content.html(datatp)
+          content.html(dataW)
         }
       });
-      return false;
+      w.preventDefault();
     };
   });
 
