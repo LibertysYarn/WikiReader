@@ -4,13 +4,17 @@ $(document).ready(function() {
   var searchF = $('#search-form');
   var content = $(".grid");
 
-  $('#search-form').submit(function(s) {
+  function mBlock() {
     var grid = document.querySelector('.grid');
     var msnry = new Masonry(grid, {
       itemSelector: '.grid-item',
       columnWidth: 260,
       gutter: 20
     });
+  }
+
+  $('#search-form').submit(function(s) {
+    mBlock();
 
     $.ajax({
       url: "https://en.wikipedia.org/w/api.php?",
@@ -34,7 +38,7 @@ $(document).ready(function() {
         search.val("");
       }
     });
-     s.preventDefault();
+    s.preventDefault();
   });
 
 
@@ -62,7 +66,7 @@ $(document).ready(function() {
           explaintext: 1,
           grnnamespace: 0,
           grnlimit: 4
-// used a generator to get the title, full url, and text extract //
+            // used a generator to get the title, full url, and text extract //
         },
         dataType: 'jsonp',
         success: function(data) {
