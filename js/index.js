@@ -3,6 +3,7 @@ $(document).ready(function() {
   var search = $('#search');
   var searchF = $('#search-form');
   var content = $(".grid");
+  var dateF = $('#date-form');
 
   function mBlock() {
     var grid = document.querySelector('.grid');
@@ -12,6 +13,34 @@ $(document).ready(function() {
       gutter: 20
     });
   }
+
+
+
+
+  dateF.submit(function() {
+    var year = yyyy;
+    var month = mm;
+    var day = dd;
+    var $grid = $('.grid').masonry({
+      columnWidth: 260,
+      itemSelector: '.grid-item'
+    });
+    var elems = [getItemElement()];
+    var $elems = $(elems);
+    $grid.append($elems).masonry('appended', $elems);
+
+    console.log(year, month, day);
+
+    function getItemElement() {
+      var elem = document.createElement('div');
+
+      getZodiacSign(day, month);
+      birthStones(month);
+      flower(month);
+      lunarNew(year, month, day);
+      dayOfWeek(year, month, day);
+    };
+  });
 
   $('#search-form').submit(function(s) {
     mBlock();
@@ -50,6 +79,7 @@ $(document).ready(function() {
     var elems = [getItemElement()];
     var $elems = $(elems);
     $grid.append($elems).masonry('appended', $elems);
+
 
     function getItemElement() {
       var elem = document.createElement('div');
