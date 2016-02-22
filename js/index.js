@@ -14,7 +14,6 @@ $(document).ready(function() {
     });
   }
 
-
   $('#search-form').submit(function(s) {
     mBlock();
 
@@ -34,6 +33,7 @@ $(document).ready(function() {
           dataS += '<a target="_blank" href="https://en.wikipedia.org/wiki/' + f.title + '"><h3>' + f.title + '</h3></a>';
           dataS += '<p>' + f.snippet + '</p>';
           dataS += '</div>'
+
         })
         content.html(dataS);
         search.val("");
@@ -41,7 +41,6 @@ $(document).ready(function() {
     });
     s.preventDefault();
   });
-
 
   $('button').on('click', function(w) {
     var $grid = $('.grid').masonry({
@@ -51,7 +50,6 @@ $(document).ready(function() {
     var elems = [getItemElement()];
     var $elems = $(elems);
     $grid.append($elems).masonry('appended', $elems);
-
 
     function getItemElement() {
       var elem = document.createElement('div');
@@ -67,7 +65,7 @@ $(document).ready(function() {
           exchars: 100,
           explaintext: 1,
           grnnamespace: 0,
-          grnlimit: 5
+          grnlimit: 4
             // used a generator to get the title, full url, and text extract //
         },
         dataType: 'jsonp',
