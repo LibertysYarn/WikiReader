@@ -1,78 +1,69 @@
-/*$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-$icon-color: #ffa500;*/
-
 @import url(https://fonts.googleapis.com/css?family=Catamaran:400,500);
-body {
-  font: 'Catamaran', sans-serif;
-  color: #FFF;
-}
 a {
   color: #333;
   text-decoration: none;
 }
+
 a:hover {
   color: #111;
   text-decoration: none;
 }
-.search-icon {
-  color: #FFF;
-  font-size: 4em;
-  padding: 12px 0;
-  overflow: visible;
+
+button:hover .search-icon,
+button:focus .search-icon {
+  color: #333;
 }
-form:active .search-icon, form:focus .search-icon, form:hover .search-icon, form:visited .search-icon {
-  display: none;
-}
-.input-lg {
-  height: 70px;
-  background-color: #555;
-  border-radius: 50px;
-  width: 200px;
+
+.btn-focus,
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
   border: none;
-}
-.input-lg:focus {
   outline: none;
 }
-.form-control-feedback {
-  right: 40%;
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
 }
+
+body {
+  color: #fff;
+  font: 'Catamaran', sans-serif;
+  text-align: center;
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cover {
+  padding: 0 20px;
+}
+
+.cover .btn-lg {
+  padding: 10px 20px;
+}
+
+form:active .search-icon,
+form:focus .search-icon,
+form:hover .search-icon,
+form:visited .search-icon {
+  display: none;
+}
+
 .form-control {
   color: #FFF;
 }
-.rand {
-  display: inline;
-  font-size: .65em;
-}
-.wiki {
-  width: 200px;
-  padding: 0;
-  background-color: #555;
-  border-radius: 3.125rem;
-  /* 50/16 */
-}
-button:hover .search-icon, button:focus .search-icon {
-  color: #333;
-}
-.btn-focus, .btn-default, .btn-default:hover, .btn-default:focus {
-  border: none;
-  outline: none;
-}
-.col-lg-12 {
-  margin-bottom: 5%;
-}
-
-/* ---- grid ---- */
 
 .grid {
-  /*background: #EEE;*/
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-  padding: 30px;
+  margin-top: 15px;
 }
-
-/* clearfix */
 
 .grid:after {
   content: '';
@@ -80,11 +71,9 @@ button:hover .search-icon, button:focus .search-icon {
   clear: both;
 }
 
-/* ---- grid-item ---- */
-
 .grid-item {
-  width: 260px;
-  height: 200px;
+  width: 235px;
+  height: 235px;
   color: #333;
   float: left;
   background: #EEE;
@@ -92,101 +81,85 @@ button:hover .search-icon, button:focus .search-icon {
   border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
   margin: 0 0.625rem 0.625rem 0;
-  /* 10/16, 10/16 */
   padding: 0 7px 7px 7px;
 }
-
-
-
-/*Cover templaet*/
-/*
- * Globals
- */
-
-
-/* Custom default button */
-
-/*.btn-default, .btn-default:hover, .btn-default:focus {
-  color: #333;
-  text-shadow: none;
-  /* Prevent inheritence from `body` */
-  /*background-color: #fff;
-  border: 1px solid #fff;
-}*/
-
-/*
- * Base structure
- */
-
-html, body {
-  height: 100%;
-  background-color: #333;
-}
-body {
-  color: #fff;
-  text-align: center;
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%;
-  /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
 
 .inner {
   padding: 30px;
 }
 
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
+.input-lg {
+  background-color: #555;
+  border-radius: 50px;
+  width: 200px;
+  border: none;
+  font-size: 40px;
+  height: 70px;
 }
 
-/*
- * Affix and center
- */
+.input-lg:focus {
+  outline: none;
+}
+
+.rand {
+  display: inline;
+  font-size: 50px;
+}
+
+#search-button {
+   font-size: 50px;
+}
+.search-icon {
+  color: #FFF;
+  padding: 12px 0;
+  overflow: visible;
+  right: 43%;
+}
+
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+}
+
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.wiki {
+  width: 200px;
+  padding: 0;
+  background-color: #555;
+  border-radius: 3.125rem;
+  font-size: 50px;
+}
 
 @media (min-width: 768px) {
-  /* Pull out the header and footer */
   .masthead {
     position: fixed;
     top: 0;
   }
-  /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
   }
-  /* Handle the widths */
-  .masthead, .cover-container {
+  .masthead,
+  .cover-container {
     width: 100%;
-    /* Must be percentage or pixels for horizontal alignment */
+  }
+  .input-lg {
+    margin-bottom: 15px;
+  }
+  .search-icon {
+    right: 43%;
   }
 }
+
 @media (min-width: 992px) {
-  .masthead, .cover-container {
-    width: 700px;
+  .cover-container {
+    width: 1000px;
   }
 }

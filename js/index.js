@@ -9,38 +9,11 @@ $(document).ready(function() {
     var grid = document.querySelector('.grid');
     var msnry = new Masonry(grid, {
       itemSelector: '.grid-item',
-      columnWidth: 260,
+      // columnWidth: 225,
       gutter: 20
     });
   }
 
-
-
-
-  dateF.submit(function() {
-    var year = yyyy;
-    var month = mm;
-    var day = dd;
-    var $grid = $('.grid').masonry({
-      columnWidth: 260,
-      itemSelector: '.grid-item'
-    });
-    var elems = [getItemElement()];
-    var $elems = $(elems);
-    $grid.append($elems).masonry('appended', $elems);
-
-    console.log(year, month, day);
-
-    function getItemElement() {
-      var elem = document.createElement('div');
-
-      getZodiacSign(day, month);
-      birthStones(month);
-      flower(month);
-      lunarNew(year, month, day);
-      dayOfWeek(year, month, day);
-    };
-  });
 
   $('#search-form').submit(function(s) {
     mBlock();
@@ -58,10 +31,9 @@ $(document).ready(function() {
         var dataS = '';
         data.query.search.map(function(f) {
           dataS += '<div class="grid-item">'
-          dataS += '<a target="_blank" href="https://en.wikipedia.org/wiki/' + f.title + '"><h2>' + f.title + '</h2></a>';
+          dataS += '<a target="_blank" href="https://en.wikipedia.org/wiki/' + f.title + '"><h3>' + f.title + '</h3></a>';
           dataS += '<p>' + f.snippet + '</p>';
           dataS += '</div>'
-
         })
         content.html(dataS);
         search.val("");
@@ -73,7 +45,7 @@ $(document).ready(function() {
 
   $('button').on('click', function(w) {
     var $grid = $('.grid').masonry({
-      columnWidth: 260,
+      // columnWidth: 225,
       itemSelector: '.grid-item'
     });
     var elems = [getItemElement()];
@@ -95,7 +67,7 @@ $(document).ready(function() {
           exchars: 100,
           explaintext: 1,
           grnnamespace: 0,
-          grnlimit: 4
+          grnlimit: 5
             // used a generator to get the title, full url, and text extract //
         },
         dataType: 'jsonp',
@@ -105,7 +77,7 @@ $(document).ready(function() {
           data.query.pages.map(function(f) {
             var snip = (f.extract !== undefined) ? f.extract : "";
             dataW += '<div class="grid-item">'
-            dataW += '<div><a target="_blank" href="https://en.wikipedia.org/wiki/' + f.fullurl + '"><h2>' + f.title + '</h2></a>';
+            dataW += '<div><a target="_blank" href="' + f.fullurl + '"><h3>' + f.title + '</h3></a>';
             dataW += '<p>' + snip + '</p>';
             dataW += '</div></div>'
           })
